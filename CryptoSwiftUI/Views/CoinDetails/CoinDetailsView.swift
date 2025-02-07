@@ -37,7 +37,7 @@ struct CoinDetailsView: View {
                         Image(systemName: "star") // Favorite icon
                             .onTapGesture {
                                 isFavourite.toggle()
-                                
+                                CoinListViewModel.addFavourite(coin: coin.getCoin())
                             }
                             .foregroundColor(isFavourite ? .green : .none)
                         Image(systemName: "bell") // Notification icon

@@ -3,4 +3,246 @@
    uuid = "ECD15F06-7FF5-4210-B4F2-5DF27D19DAFF"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9E6D9658-A1EB-480F-B53E-F7152ED0DC27"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CryptoSwiftUI/Views/Favourites/FavouritesView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B5BA133-97B9-41B7-BEDA-24A3888990C7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CryptoSwiftUI/Views/Favourites/FavouritesView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "6B5BA133-97B9-41B7-BEDA-24A3888990C7 - 3151ad4da5d4b082"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in CryptoSwiftUI.FavouritesView.body.getter : some"
+                  moduleName = "CryptoSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/CryptoSwiftUI/CryptoSwiftUI/Views/Favourites/FavouritesView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "66">
+               </Location>
+               <Location
+                  uuid = "6B5BA133-97B9-41B7-BEDA-24A3888990C7 - 3151ad4da5d4b082"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in CryptoSwiftUI.FavouritesView.body.getter : some"
+                  moduleName = "CryptoSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/CryptoSwiftUI/CryptoSwiftUI/Views/Favourites/FavouritesView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "103">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "89FB7BB2-A1EE-4164-B337-DC7E61AD966F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CryptoSwiftUI/ViewModels/CoinListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "addFavourite(coin:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "89FB7BB2-A1EE-4164-B337-DC7E61AD966F - 47f0902bc688e88b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static CryptoSwiftUI.CoinListViewModel.addFavourite(coin: CryptoSwiftUI.Coin) -&gt; ()"
+                  moduleName = "CryptoSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/CryptoSwiftUI/CryptoSwiftUI/ViewModels/CoinListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "131">
+               </Location>
+               <Location
+                  uuid = "89FB7BB2-A1EE-4164-B337-DC7E61AD966F - 47f0902bc688e88b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static CryptoSwiftUI.CoinListViewModel.addFavourite(coin: CryptoSwiftUI.Coin) -&gt; ()"
+                  moduleName = "CryptoSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/CryptoSwiftUI/CryptoSwiftUI/ViewModels/CoinListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "514">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6C34278E-DB53-430F-9AFE-A621B3D21581"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CryptoSwiftUI/ViewModels/CoinListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "addFavourite(coin:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2954D781-01FF-47C7-92B9-FE6182FD9BBF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CryptoSwiftUI/ViewModels/CoinListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "getFavoriteCoins()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2954D781-01FF-47C7-92B9-FE6182FD9BBF - a3a990fc592e661a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static CryptoSwiftUI.CoinListViewModel.getFavoriteCoins() -&gt; Swift.Optional&lt;Swift.Array&lt;CryptoSwiftUI.Coin&gt;&gt;"
+                  moduleName = "CryptoSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/CryptoSwiftUI/CryptoSwiftUI/ViewModels/CoinListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "2954D781-01FF-47C7-92B9-FE6182FD9BBF - a3a990fc592e661a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static CryptoSwiftUI.CoinListViewModel.getFavoriteCoins() -&gt; Swift.Optional&lt;Swift.Array&lt;CryptoSwiftUI.Coin&gt;&gt;"
+                  moduleName = "CryptoSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/CryptoSwiftUI/CryptoSwiftUI/ViewModels/CoinListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "226">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4954F1F7-DEA8-4844-BFF1-6A6A7CD34051"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CryptoSwiftUI/ViewModels/CoinListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "getFavoriteCoins()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4954F1F7-DEA8-4844-BFF1-6A6A7CD34051 - a3a990fc592e663d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static CryptoSwiftUI.CoinListViewModel.getFavoriteCoins() -&gt; Swift.Optional&lt;Swift.Array&lt;CryptoSwiftUI.Coin&gt;&gt;"
+                  moduleName = "CryptoSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/CryptoSwiftUI/CryptoSwiftUI/ViewModels/CoinListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "455">
+               </Location>
+               <Location
+                  uuid = "4954F1F7-DEA8-4844-BFF1-6A6A7CD34051 - a3a990fc592e663d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static CryptoSwiftUI.CoinListViewModel.getFavoriteCoins() -&gt; Swift.Optional&lt;Swift.Array&lt;CryptoSwiftUI.Coin&gt;&gt;"
+                  moduleName = "CryptoSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/CryptoSwiftUI/CryptoSwiftUI/ViewModels/CoinListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "666">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "13C454A8-E8E7-4226-96FD-06599AD6D449"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CryptoSwiftUI/ViewModels/CoinListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "getFavoriteCoins()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

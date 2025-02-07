@@ -55,5 +55,9 @@ class CoinViewModel: ObservableObject {
     var btcPrice: String {
         return coin.btcPrice
     }
+    
+    func getCoin() -> Coin {
+        return coin
+    }
 
 }

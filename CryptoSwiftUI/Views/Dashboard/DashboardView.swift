@@ -179,27 +179,7 @@ struct DashboardView: View {
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) // Enable swipeable tabs
             }
             .padding(.horizontal)
-            
-            // Bottom Tab Bar
-            HStack {
-                BottomTabItem(icon: "house.fill", title: "Home", isSelected: true, action: {
-                    
-                })
-                BottomTabItem(icon: "chart.line.uptrend.xyaxis", title: "Invest", isSelected: false, action: {
-                    
-                })
-                BottomTabItem(icon: "globe", title: "Web3", isSelected: false, action: {
-                    
-                })
-                BottomTabItem(icon: "briefcase.fill", title: "Futures", isSelected: false, action: {
-                    
-                })
-                BottomTabItem(icon: "person.crop.circle", title: "Portfolio", isSelected: false, action: {
-                    
-                })
-            }
-            .padding()
-            .background(Color.white.shadow(radius: 5))
+
         }
         .sheet(item: $selectedCoin) { coin in
             CoinDetailsView(coin: CoinViewModel(coin: coin))

@@ -11,7 +11,7 @@ import SwiftUI
 struct CryptoSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            DashboardView()
+            TabsView()
         }
     }
 }

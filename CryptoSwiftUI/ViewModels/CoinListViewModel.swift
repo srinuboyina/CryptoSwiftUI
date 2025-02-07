@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 class CoinListViewModel: ObservableObject {
     private var coins: [Coin] = []
     private let pageSize = 20
@@ -58,5 +59,25 @@ class CoinListViewModel: ObservableObject {
         return coins.filter ({ Double($0.change) ?? 0 < 0} ).sorted { coin1, coin2 in
             return coin1.change > coin2.change
         }
+    }
+    
+    static func addFavourite(coin: Coin){
+        if let encoded = try? JSONEncoder().encode([coin]) {
+            if var favorites = getFavoriteCoins() {
+                favorites.append(coin)
+                let encodedCoins = try? JSONEncoder().encode(favorites)
+                UserDefaults.standard.set(encodedCoins, forKey: "favoriteCoins")
+            } else {
+                UserDefaults.standard.set(encoded, forKey: "favoriteCoins")
+            }
+        }
+    }
+    
+    static func getFavoriteCoins() -> [Coin]? {
+        if let savedData = UserDefaults.standard.data(forKey: "favoriteCoins"),
+           let decoded = try? JSONDecoder().decode([Coin].self, from: savedData) {
+            return decoded
+        }
+        return nil
     }
 }
