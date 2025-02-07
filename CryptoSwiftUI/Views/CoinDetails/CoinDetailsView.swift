@@ -11,7 +11,7 @@ import Charts
 
 struct CoinDetailsView: View {
     @StateObject var coin: CoinViewModel
-    @State private var isFavourite = false
+    @State var isFavorite: Bool = false
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
@@ -36,10 +36,9 @@ struct CoinDetailsView: View {
                     HStack {
                         Image(systemName: "star") // Favorite icon
                             .onTapGesture {
-                                isFavourite.toggle()
-                                CoinListViewModel.addFavourite(coin: coin.getCoin())
+                                toggleFeatures()
                             }
-                            .foregroundColor(isFavourite ? .green : .none)
+                            .foregroundColor(isFavorite ? .green : .none)
                         Image(systemName: "bell") // Notification icon
                         Image("whatsapp") // Share/WhatsApp icon
                             .frame(width: 30, height: 30)
@@ -87,6 +86,14 @@ struct CoinDetailsView: View {
             }
             .padding()
         }
+        .onAppear(){
+            isFavorite = coin.favorite
+        }
+    }
+    
+    func toggleFeatures() {
+        coin.favorite.toggle()
+        isFavorite = coin.favorite
     }
 }
 

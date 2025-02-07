@@ -59,5 +59,29 @@ class CoinViewModel: ObservableObject {
     func getCoin() -> Coin {
         return coin
     }
+    
+    var favorite: Bool {
+        get {
+            if let favorites = FavoriteService.shared.getAllFavorites() {
+                if favorites.first(where: { coin1 in
+                    return coin.symbol == coin1.symbol
+                }) != nil  {
+                    return true
+                }
+            }
+            
+            return false
+        }
+        set(newValue) {
+            if newValue {
+                FavoriteService.shared.addFavorite(coin: coin)
+            } else {
+                FavoriteService.shared.removeFavorite(coin: coin)
+            }
+        }
+    }
+    
+    
 
 }
+

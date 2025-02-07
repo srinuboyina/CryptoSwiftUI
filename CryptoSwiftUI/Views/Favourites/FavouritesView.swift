@@ -19,8 +19,8 @@ struct FavouritesView: View {
             }
         }
         .onAppear(){
-            if let coins1 = CoinListViewModel.getFavoriteCoins() {
-               coins = coins1
+            if let coins1 = FavoriteService.shared.getAllFavorites() {
+                coins = coins1
             }
         }
     }
