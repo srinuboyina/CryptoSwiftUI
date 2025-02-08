@@ -18,9 +18,13 @@ struct SearchView: View {
     @State var coins: [Coin] = []
     @State private var searchText = ""
     
+    @State private var selectedCoin: Coin? // Store the selected coin
+    @State private var showDetail = false  // Control the sheet visibility
+    
     var filteredCoins: [Coin] {
-        searchText.isEmpty ? coins : coins.filter { $0.name.localizedCaseInsensitiveContains(searchText)
-        }
+        var fcoins = coins.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+        fcoins = fcoins.isEmpty ? coins.filter { $0.symbol.localizedCaseInsensitiveContains(searchText) } : fcoins
+        return searchText.isEmpty ? coins : fcoins
     }
     
     let recentSearches = ["HBAR", "EMT", "ETH", "BNB", "AVAX", "ADA", "SHIB", "DOT"]
@@ -59,6 +63,15 @@ struct SearchView: View {
                 List {
                     ForEach(filteredCoins, id: \.symbol) { coin in
                         CoinRow(name: coin.name, symbol: coin.symbol, price: coin.price, change: coin.change)
+                            .onTapGesture {
+                                self.selectedCoin = coin
+                                self.showDetail = true
+                               }
+                    }
+                }
+                .sheet(isPresented: $showDetail) {
+                    if let coin = selectedCoin {
+                        CoinDetailsView(coinVM: CoinViewModel(coin: coin))
                     }
                 }
             } else {
@@ -77,6 +90,9 @@ struct SearchView: View {
                             .background(Color.gray.opacity(0.2))
                             .cornerRadius(15)
                             .foregroundColor(.black)
+                            .onTapGesture {
+                                searchText = item
+                            }
                     }
                     .frame(height: 100)
                     .padding(.horizontal)
