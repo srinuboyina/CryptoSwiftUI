@@ -20,21 +20,14 @@ class CoinListViewModelTests: XCTestCase {
     }
 
     override func tearDown() {
-        viewModel = nil
         super.tearDown()
     }
 
     func testLoadCoins() {
-        let expectation = self.expectation(description: "Coins should be loaded")
-        
-        viewModel.onDataUpdate = {
-            XCTAssertEqual(self.viewModel.allCoins.count, 100, "Should load exactly 100 coins")
-            expectation.fulfill()
+        fetchData {
+            let count = self.viewModel.allCoins.count
+            XCTAssertEqual(count, 100, "Should load exactly 100 coins")
         }
-        
-        viewModel.loadCoins()
-        
-        waitForExpectations(timeout: 2.0, handler: nil)
     }
     
     func testPaginationNextPage() {
@@ -47,7 +40,7 @@ class CoinListViewModelTests: XCTestCase {
         }
         networkManager.loadMockCoins(coins: mockCoins)
         viewModel.loadCoins()
-        self.viewModel.nextPage()
+        viewModel.nextPage()
         
         fetchData {
             let firstPageCoins = self.viewModel.getCoinsForPage()

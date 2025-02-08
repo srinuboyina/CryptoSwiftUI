@@ -9,7 +9,7 @@
 #if canImport(UIKit)
     import UIKit
 #endif
-import DGCharts
+import Charts
 
 class ColoredLineChartViewController: DemoBaseViewController {
     @IBOutlet var chartViews: [LineChartView]!

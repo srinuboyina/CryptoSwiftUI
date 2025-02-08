@@ -5,7 +5,7 @@
 //  Created by Xuan Liu on 14/10/2017.
 //
 
-@testable import DGCharts
+@testable import Charts
 import SnapshotTesting
 import XCTest
 

@@ -1,4 +1,4 @@
-import DGCharts
+import Charts
 import SnapshotTesting
 import UIKit
 import XCTest
@@ -32,7 +32,7 @@ func assertChartSnapshot<Value: ChartViewBase>(
 
     #if arch(arm64)
     let snapshotDirectory = fileUrl.deletingLastPathComponent()
-        .appendingPathComponent("__Snapshots__AppleSilicon__")
+        .appendingPathComponent("__Snapshots__Silicon__")
         .appendingPathComponent(fileName)
         .path
     #else
@@ -44,7 +44,7 @@ func assertChartSnapshot<Value: ChartViewBase>(
 
     let failure = verifySnapshot(
         matching: try value(),
-        as: .image(traits: .init(userInterfaceStyle: .light)),
+        as: .image,
         record: recording,
         snapshotDirectory: snapshotDirectory,
         timeout: timeout,

@@ -9,6 +9,7 @@
 //  https://github.com/danielgindi/Charts
 //
 
+import Algorithms
 import Foundation
 import CoreGraphics
 

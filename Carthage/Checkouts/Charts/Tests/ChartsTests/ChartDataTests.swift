@@ -5,7 +5,7 @@
 //  Created by Peter Kaminski on 1/23/20.
 //
 
-@testable import DGCharts
+@testable import Charts
 import XCTest
 
 class ChartDataTests: XCTestCase {

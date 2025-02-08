@@ -253,47 +253,41 @@ open class YAxisRendererHorizontalBarChart: YAxisRenderer
             // if drawing the limit-value label is enabled
             if l.drawLabelEnabled, !label.isEmpty
             {
-                let labelLineSize = label.size(withAttributes: [.font: l.valueFont])
-                let labelLineRotatedSize = labelLineSize.rotatedBy(degrees: l.labelRotationAngle)
-                let labelLineRotatedWidth = labelLineRotatedSize.width
-                let labelLineRotatedHeight = labelLineRotatedSize.height
-
+                let labelLineHeight = l.valueFont.lineHeight
+                
                 let xOffset = l.lineWidth + l.xOffset
                 let yOffset = 2.0 + l.yOffset
-                let labelRotationAngleRadians = l.labelRotationAngle.DEG2RAD
 
+                let align: TextAlignment
                 let point: CGPoint
-                let anchor = CGPoint(x: 0.0, y: 0.0)
 
                 switch l.labelPosition
                 {
                 case .rightTop:
+                    align = .left
                     point = CGPoint(x: position.x + xOffset,
                                     y: viewPortHandler.contentTop + yOffset)
 
                 case .rightBottom:
+                    align = .left
                     point = CGPoint(x: position.x + xOffset,
-                                    y: viewPortHandler.contentBottom - labelLineRotatedHeight - yOffset)
+                                    y: viewPortHandler.contentBottom - labelLineHeight - yOffset)
 
                 case .leftTop:
-                    point = CGPoint(x: position.x - labelLineRotatedWidth - xOffset,
+                    align = .right
+                    point = CGPoint(x: position.x - xOffset,
                                     y: viewPortHandler.contentTop + yOffset)
 
                 case .leftBottom:
-                    point = CGPoint(x: position.x - labelLineRotatedWidth - xOffset,
-                                    y: viewPortHandler.contentBottom - labelLineRotatedHeight - yOffset)
+                    align = .right
+                    point = CGPoint(x: position.x - xOffset,
+                                    y: viewPortHandler.contentBottom - labelLineHeight - yOffset)
                 }
-
-                let attributes: [NSAttributedString.Key : Any] = [
-                    .font: l.valueFont,
-                    .foregroundColor: l.valueTextColor
-                ]
 
                 context.drawText(label,
                                  at: point,
-                                 anchor: anchor,
-                                 angleRadians: labelRotationAngleRadians,
-                                 attributes: attributes)
+                                 align: align,
+                                 attributes: [.font: l.valueFont, .foregroundColor: l.valueTextColor])
             }
         }
     }

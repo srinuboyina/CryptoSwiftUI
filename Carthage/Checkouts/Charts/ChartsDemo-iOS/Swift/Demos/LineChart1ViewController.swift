@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import DGCharts
+import Charts
 
 class LineChart1ViewController: DemoBaseViewController {
 

@@ -186,7 +186,7 @@ struct DashboardView: View {
 
         }
         .sheet(item: $selectedCoin) { coin in
-            CoinDetailsView(coin: CoinViewModel(coin: coin))
+            CoinDetailsView(coinVM: CoinViewModel(coin: coin))
         }
         .fullScreenCover(isPresented: $showSearches) {
             SearchView(coins: coinsVM.allCoins)

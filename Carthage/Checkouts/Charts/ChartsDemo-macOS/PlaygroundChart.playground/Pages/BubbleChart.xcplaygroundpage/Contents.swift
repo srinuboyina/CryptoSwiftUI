@@ -17,7 +17,7 @@
 
 //: # Bubble Chart
 import Cocoa
-import DGCharts
+import Charts
 import PlaygroundSupport
 
 let ITEM_COUNT  = 20

@@ -60,6 +60,13 @@ class CoinViewModel: ObservableObject {
         return coin
     }
     
+    func chartData() ->[(x:Double, y:Double)]{
+        let formattedData = sparkline.enumerated().compactMap { (index, value) in
+            (x: Double(index + 1), y: Double(value))
+        }
+        return formattedData
+    }
+    
     var favorite: Bool {
         get {
             if let favorites = FavoriteService.shared.getAllFavorites() {

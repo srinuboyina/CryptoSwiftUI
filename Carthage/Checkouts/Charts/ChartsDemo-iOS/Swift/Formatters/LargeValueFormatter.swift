@@ -5,7 +5,7 @@
 //
 
 import Foundation
-import DGCharts
+import Charts
 
 private let MAX_LENGTH = 5
 

@@ -9,6 +9,7 @@
 //  https://github.com/danielgindi/Charts
 //
 
+import Algorithms
 import Foundation
 
 /// Determines how to round DataSet index values for `ChartDataSet.entryIndex(x, rounding)` when an exact x-value is not found.
@@ -299,7 +300,7 @@ open class ChartDataSet: ChartBaseDataSet
     /// - Returns: True
     // TODO: This should return `Void` to follow Swift convention
     @available(*, deprecated, message: "Use `append(_:)` instead", renamed: "append(_:)")
-    @discardableResult open override func addEntry(_ e: ChartDataEntry) -> Bool
+    open override func addEntry(_ e: ChartDataEntry) -> Bool
     {
         append(e)
         return true
@@ -313,7 +314,7 @@ open class ChartDataSet: ChartBaseDataSet
     ///   - e: the entry to add
     /// - Returns: True
     // TODO: This should return `Void` to follow Swift convention
-    @discardableResult open override func addEntryOrdered(_ e: ChartDataEntry) -> Bool
+    open override func addEntryOrdered(_ e: ChartDataEntry) -> Bool
     {
         if let last = last, last.x > e.x
         {

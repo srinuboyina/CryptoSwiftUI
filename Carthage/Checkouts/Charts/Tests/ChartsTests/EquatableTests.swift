@@ -5,7 +5,7 @@
 //  Created by Jacob Christie on 2017-11-13.
 //
 
-@testable import DGCharts
+@testable import Charts
 import XCTest
 
 class EquatableTests: XCTestCase {

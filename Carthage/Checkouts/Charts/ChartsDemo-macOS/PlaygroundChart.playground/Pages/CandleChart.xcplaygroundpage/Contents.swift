@@ -17,7 +17,7 @@
 
 //: # Candle Chart
 import Cocoa
-import DGCharts
+import Charts
 import PlaygroundSupport
 
 

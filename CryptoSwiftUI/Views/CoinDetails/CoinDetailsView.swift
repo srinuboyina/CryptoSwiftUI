@@ -10,7 +10,7 @@ import Charts
 
 
 struct CoinDetailsView: View {
-    @StateObject var coin: CoinViewModel
+    @StateObject var coinVM: CoinViewModel
     @State var isFavorite: Bool = false
     var body: some View {
         ScrollView {
@@ -18,17 +18,17 @@ struct CoinDetailsView: View {
                 
                 // Bitcoin Header
                 HStack {
-                    URLImageView(imageURL: coin.iconUrl)
+                    URLImageView(imageURL: coinVM.iconUrl)
                         .frame(width: 100, height: 100)
                         .foregroundColor(.yellow)
                     
                     VStack {
-                        Text(coin.name)
+                        Text(coinVM.name)
                             .font(.subheadline)
                             .fontWeight(.bold)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
-                        Text(coin.symbol)
+                        Text(coinVM.symbol)
                             .font(.subheadline)
                             .fontWeight(.bold)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -50,11 +50,11 @@ struct CoinDetailsView: View {
                 
                 // Price Information
                 VStack {
-                    Text(coin.marketCap)
+                    Text(coinVM.marketCap)
                         .font(.system(size: 34, weight: .bold))
                         .foregroundColor(.white)
                     
-                    Text("Market Cap: \(coin.marketCap)")
+                    Text("Market Cap: \(coinVM.marketCap)")
                         .font(.headline)
                         .foregroundColor(.gray)
                 }
@@ -64,8 +64,7 @@ struct CoinDetailsView: View {
                     Text("24H Performance")
                         .font(.headline)
                         .foregroundColor(.white)
-                    
-                    CryptoGraphView(cryptoData: coin.sparkline)
+                    LineChartWrapper(entries: coinVM.chartData())
                         .frame(height: 250)
                         .cornerRadius(10)
                 }
@@ -73,13 +72,13 @@ struct CoinDetailsView: View {
                 
                 VStack {
                     HStack {
-                        StatisticView(title: "Change", value: coin.change)
-                        StatisticView(title: "Rank", value: coin.rank)
+                        StatisticView(title: "Change", value: coinVM.change)
+                        StatisticView(title: "Rank", value: coinVM.rank)
                     }
                     
                     HStack {
-                        StatisticView(title: "24h Volume", value: coin.volume24h)
-                        StatisticView(title: "BTC Price", value: coin.btcPrice)
+                        StatisticView(title: "24h Volume", value: coinVM.volume24h)
+                        StatisticView(title: "BTC Price", value: coinVM.btcPrice)
                     }
                 }
                 
@@ -87,13 +86,13 @@ struct CoinDetailsView: View {
             .padding()
         }
         .onAppear(){
-            isFavorite = coin.favorite
+            isFavorite = coinVM.favorite
         }
     }
     
     func toggleFeatures() {
-        coin.favorite.toggle()
-        isFavorite = coin.favorite
+        coinVM.favorite.toggle()
+        isFavorite = coinVM.favorite
     }
 }
 
@@ -148,6 +147,6 @@ struct URLImageView: View {
 struct CoinDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         let coinVM = CoinViewModel(coin: Coin(name: "Bitcoin", price: "101869.62848858866", iconUrl: "https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg", marketCap: "2018707438775", symbol: "BTC", volume24h: "30480070767", change: "-0.72", sparkline: ["102729.12325887769","102373.25518010987","103056.15638125224","102353.95503707482","102675.18875859388","102688.24870073471","102225.00174448552","102046.66920230465","101121.30783987479","100786.44740322708","101167.38187245067","101550.23524610775","101750.28213660786","101879.12124251049","101970.29779530701","102086.86221525777","102196.92421450581","102532.68537213831","102614.20337582636","102815.8123793487","102528.02031167001","102527.6738007753","102588.79819612217"], btcPrice: "1", rank: 2))
-        CoinDetailsView(coin: coinVM)
+        CoinDetailsView(coinVM: coinVM)
     }
 }

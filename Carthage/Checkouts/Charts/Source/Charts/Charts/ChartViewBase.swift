@@ -13,12 +13,8 @@
 import Foundation
 import CoreGraphics
 
-#if canImport(UIKit)
-import UIKit
-#endif
-
-#if canImport(AppKit)
-import AppKit
+#if !os(OSX)
+    import UIKit
 #endif
 
 @objc

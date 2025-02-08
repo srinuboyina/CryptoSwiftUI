@@ -10,7 +10,7 @@
 
 import Foundation
 import Cocoa
-import DGCharts
+import Charts
 
 open class PieDemoViewController: NSViewController
 {
