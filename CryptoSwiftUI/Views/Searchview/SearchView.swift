@@ -64,15 +64,13 @@ struct SearchView: View {
                     ForEach(filteredCoins, id: \.symbol) { coin in
                         CoinRow(name: coin.name, symbol: coin.symbol, price: coin.price, change: coin.change)
                             .onTapGesture {
-                                self.selectedCoin = coin
-                                self.showDetail = true
+                                    selectedCoin = coin
+                                    showDetail.toggle()
                                }
                     }
                 }
-                .sheet(isPresented: $showDetail) {
-                    if let coin = selectedCoin {
-                        CoinDetailsView(coinVM: CoinViewModel(coin: coin))
-                    }
+                .sheet(item: $selectedCoin) { coin in
+                    CoinDetailsView(coinVM: CoinViewModel(coin: coin))
                 }
             } else {
                 // Recent Searches
