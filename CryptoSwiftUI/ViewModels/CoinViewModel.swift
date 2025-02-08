@@ -7,8 +7,24 @@
 
 import Foundation
 
+protocol CoinViewModelProtocol {
+    var marketCap: String {get}
+    var price: String {get}
+    var name: String {get}
+    var symbol: String {get}
+    var volume24h: String {get}
+    var change: String {get}
+    var iconUrl: String {get}
+    var sparkline: [Double] {get}
+    var rank: String {get}
+    var btcPrice: String {get}
+    func getCoin() -> Coin
+    func chartData() ->[(x:Double, y:Double)]
+    var favorite: Bool {get set}
+}
 
-class CoinViewModel: ObservableObject {
+
+class CoinViewModel: ObservableObject, CoinViewModelProtocol {
     @Published private var coin: Coin
     
     init(coin: Coin) {

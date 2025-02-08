@@ -56,6 +56,20 @@ struct SearchView: View {
                     .padding(.horizontal, 12)
                     .background(Color.gray.opacity(0.1))
                     .cornerRadius(10)
+                    .overlay(
+                        HStack {
+                            Spacer()
+                            if !searchText.isEmpty {
+                                Button(action: {
+                                    searchText = ""
+                                }) {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .foregroundColor(.gray)
+                                        .padding(.trailing, 8)
+                                }
+                            }
+                        }
+                    )
             }
             .padding()
             

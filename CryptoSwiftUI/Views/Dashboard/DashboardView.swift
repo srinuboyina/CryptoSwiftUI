@@ -14,6 +14,11 @@ struct DashboardView: View {
     @State private var showSearches = false
     @State private var showProfile = false
     @State private var showCoinDetails = false
+    @State private var showInstantBuy = false
+    @State private var showEarn = false
+    @State private var showSIP = false
+    @State private var showOrders = false
+    @State private var showAddFunds = false
     @State private var selectedCoin: Coin?
     
     @StateObject var coinsVM: CoinListViewModel = CoinListViewModel()
@@ -92,9 +97,21 @@ struct DashboardView: View {
             // Action Buttons
             HStack {
                 ActionButton(icon: "bolt.fill", title: "Instant Buy")
+                    .onTapGesture {
+                        showInstantBuy = true
+                    }
                 ActionButton(icon: "dollarsign.circle.fill", title: "Earn")
+                    .onTapGesture {
+                        showEarn = true
+                    }
                 ActionButton(icon: "calendar", title: "SIP")
+                    .onTapGesture {
+                        showSIP = true
+                    }
                 ActionButton(icon: "arrow.right.arrow.left.circle", title: "Orders")
+                    .onTapGesture {
+                        showOrders = true
+                    }
             }
             .padding()
             
@@ -113,6 +130,9 @@ struct DashboardView: View {
                 Image(systemName: "plus.circle.fill")
                     .font(.title)
                     .foregroundColor(.blue)
+                    .onTapGesture {
+                        showAddFunds = true
+                    }
             }
             .padding()
             .background(Color.gray.opacity(0.2))
@@ -193,6 +213,21 @@ struct DashboardView: View {
         }
         .fullScreenCover(isPresented: $showProfile) {
             ProfileView()
+        }
+        .fullScreenCover(isPresented: $showInstantBuy) {
+            InstantBuyView()
+        }
+        .fullScreenCover(isPresented: $showEarn) {
+            EarnView()
+        }
+        .fullScreenCover(isPresented: $showSIP) {
+            SIPView()
+        }
+        .fullScreenCover(isPresented: $showOrders) {
+            OrdersView()
+        }
+        .fullScreenCover(isPresented: $showAddFunds) {
+            AddFundsView()
         }
         
     }

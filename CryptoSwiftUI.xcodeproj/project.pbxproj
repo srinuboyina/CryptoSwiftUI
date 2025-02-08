@@ -38,6 +38,11 @@
 		18C5BB022D538F5E007E1D65 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5BB012D538F5E007E1D65 /* ActionButton.swift */; };
 		18C5BB0A2D539411007E1D65 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5BB092D539411007E1D65 /* SearchView.swift */; };
 		18C756CC2D57968E00E8F6C3 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C756CB2D57968E00E8F6C3 /* BalloonMarker.swift */; };
+		18C756D32D57BD4200E8F6C3 /* InstantBuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C756D22D57BD4200E8F6C3 /* InstantBuyView.swift */; };
+		18C756D52D57BD5B00E8F6C3 /* EarnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C756D42D57BD5B00E8F6C3 /* EarnView.swift */; };
+		18C756D82D57BD7200E8F6C3 /* SIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C756D72D57BD7200E8F6C3 /* SIPView.swift */; };
+		18C756DA2D57BD8B00E8F6C3 /* OrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C756D92D57BD8B00E8F6C3 /* OrdersView.swift */; };
+		18C756DC2D57BDA300E8F6C3 /* AddFundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C756DB2D57BDA300E8F6C3 /* AddFundsView.swift */; };
 		18D3D3D02D5704BD006F255E /* CustomLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3D3CF2D5704BD006F255E /* CustomLineChartView.swift */; };
 		18D3D3D32D570CFE006F255E /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3D3D22D570CFD006F255E /* MockNetworkManager.swift */; };
 		18D3D3D62D570D31006F255E /* CoinBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3D3D52D570D31006F255E /* CoinBuilder.swift */; };
@@ -114,6 +119,11 @@
 		18C5BB012D538F5E007E1D65 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		18C5BB092D539411007E1D65 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		18C756CB2D57968E00E8F6C3 /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
+		18C756D22D57BD4200E8F6C3 /* InstantBuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantBuyView.swift; sourceTree = "<group>"; };
+		18C756D42D57BD5B00E8F6C3 /* EarnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarnView.swift; sourceTree = "<group>"; };
+		18C756D72D57BD7200E8F6C3 /* SIPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIPView.swift; sourceTree = "<group>"; };
+		18C756D92D57BD8B00E8F6C3 /* OrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersView.swift; sourceTree = "<group>"; };
+		18C756DB2D57BDA300E8F6C3 /* AddFundsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFundsView.swift; sourceTree = "<group>"; };
 		18D3D3CF2D5704BD006F255E /* CustomLineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLineChartView.swift; sourceTree = "<group>"; };
 		18D3D3D22D570CFD006F255E /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
 		18D3D3D52D570D31006F255E /* CoinBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinBuilder.swift; sourceTree = "<group>"; };
@@ -297,6 +307,11 @@
 		18C5BAE82D538938007E1D65 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				18C756D12D57BD1900E8F6C3 /* Add Funds */,
+				18C756D02D57BD0D00E8F6C3 /* Orders */,
+				18C756CF2D57BD0300E8F6C3 /* SIP */,
+				18C756CE2D57BCF900E8F6C3 /* Earn */,
+				18C756CD2D57BCF000E8F6C3 /* Instant Buy */,
 				18B3F8432D56574700C5C955 /* Profile */,
 				18BC05372D5504CF0048C9E2 /* TabsView */,
 				18BC052D2D54FD4D0048C9E2 /* Favourites */,
@@ -376,6 +391,46 @@
 				18BC05302D54FDCD0048C9E2 /* Web3View.swift */,
 			);
 			path = Web3;
+			sourceTree = "<group>";
+		};
+		18C756CD2D57BCF000E8F6C3 /* Instant Buy */ = {
+			isa = PBXGroup;
+			children = (
+				18C756D22D57BD4200E8F6C3 /* InstantBuyView.swift */,
+			);
+			path = "Instant Buy";
+			sourceTree = "<group>";
+		};
+		18C756CE2D57BCF900E8F6C3 /* Earn */ = {
+			isa = PBXGroup;
+			children = (
+				18C756D42D57BD5B00E8F6C3 /* EarnView.swift */,
+			);
+			path = Earn;
+			sourceTree = "<group>";
+		};
+		18C756CF2D57BD0300E8F6C3 /* SIP */ = {
+			isa = PBXGroup;
+			children = (
+				18C756D72D57BD7200E8F6C3 /* SIPView.swift */,
+			);
+			path = SIP;
+			sourceTree = "<group>";
+		};
+		18C756D02D57BD0D00E8F6C3 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				18C756D92D57BD8B00E8F6C3 /* OrdersView.swift */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		18C756D12D57BD1900E8F6C3 /* Add Funds */ = {
+			isa = PBXGroup;
+			children = (
+				18C756DB2D57BDA300E8F6C3 /* AddFundsView.swift */,
+			);
+			path = "Add Funds";
 			sourceTree = "<group>";
 		};
 		18D3D3CE2D570491006F255E /* CustomLineChartView */ = {
@@ -550,8 +605,10 @@
 				18BC052F2D54FDB40048C9E2 /* FavouritesView.swift in Sources */,
 				18D3D3D02D5704BD006F255E /* CustomLineChartView.swift in Sources */,
 				18C5BB022D538F5E007E1D65 /* ActionButton.swift in Sources */,
+				18C756D52D57BD5B00E8F6C3 /* EarnView.swift in Sources */,
 				18C5BAEF2D5389F6007E1D65 /* DashboardView.swift in Sources */,
 				18C5BAFC2D538EE6007E1D65 /* BottomTabItem.swift in Sources */,
+				18C756DC2D57BDA300E8F6C3 /* AddFundsView.swift in Sources */,
 				18C5BABF2D5388CC007E1D65 /* ContentView.swift in Sources */,
 				18C756CC2D57968E00E8F6C3 /* BalloonMarker.swift in Sources */,
 				18AB694D2D53BBE100FBD67D /* CoinDetailsView.swift in Sources */,
@@ -566,9 +623,12 @@
 				18C5BB0A2D539411007E1D65 /* SearchView.swift in Sources */,
 				18C5BABD2D5388CC007E1D65 /* CryptoSwiftUIApp.swift in Sources */,
 				18C5BAF22D538A33007E1D65 /* CoinListViewModel.swift in Sources */,
+				18C756D82D57BD7200E8F6C3 /* SIPView.swift in Sources */,
 				18AB694F2D53BEBB00FBD67D /* CryptoGraphView.swift in Sources */,
+				18C756DA2D57BD8B00E8F6C3 /* OrdersView.swift in Sources */,
 				18B3F8452D56576600C5C955 /* ProfileView.swift in Sources */,
 				18C5BAF62D538A44007E1D65 /* API.swift in Sources */,
+				18C756D32D57BD4200E8F6C3 /* InstantBuyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
