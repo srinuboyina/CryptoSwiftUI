@@ -231,7 +231,7 @@
 		18C5BABB2D5388CC007E1D65 /* CryptoSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				18D3D3CE2D570491006F255E /* LineGraph */,
+				18D3D3CE2D570491006F255E /* CustomLineChartView */,
 				18DFAC182D56453B0079D4B7 /* Service */,
 				18C5BAF82D538B0F007E1D65 /* Utils */,
 				18C5BAE92D53893E007E1D65 /* Models */,
@@ -378,13 +378,13 @@
 			path = Web3;
 			sourceTree = "<group>";
 		};
-		18D3D3CE2D570491006F255E /* LineGraph */ = {
+		18D3D3CE2D570491006F255E /* CustomLineChartView */ = {
 			isa = PBXGroup;
 			children = (
 				18C756CB2D57968E00E8F6C3 /* BalloonMarker.swift */,
 				18D3D3CF2D5704BD006F255E /* CustomLineChartView.swift */,
 			);
-			path = LineGraph;
+			path = CustomLineChartView;
 			sourceTree = "<group>";
 		};
 		18D3D3D12D570CC1006F255E /* MockNetworkManager */ = {

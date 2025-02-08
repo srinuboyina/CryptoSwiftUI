@@ -13,12 +13,18 @@ Portfolio screen to display the user portfolio
 - used thirdparty library danielgindi charts library for LineGraph
 
 
-## NOTE: if running the server doesn't work
-
-- Use Xcode 14.1 or higher version
-- Please update the carthage before run your application
-
 # Architecture:
 
 - used MVVM architecture
+
+# Challenges:
+- I am having old laptop which can have only xcode14.1
+- SwiftUI charts are not supported for this version
+- Built a CustomLineChartView using UIKit View
+
+
+# Assumptions:
+- I downloaded few crypto apps and observed the UI/UX
+- I simulated some of the screens from those apps
+
 

@@ -13,18 +13,20 @@ struct FavouritesView: View {
     @State private var showDetail = false  // Control the sheet visibility
     
     var body: some View {
-        VStack {
-            List {
-                ForEach(coins, id: \.symbol) { coin in
-                    CoinRow(name: coin.name, symbol: coin.symbol, price: coin.price, change: coin.change)
-                        .onTapGesture {
+        NavigationStack {
+            VStack {
+                List {
+                    ForEach(coins, id: \.symbol) { coin in
+                        CoinRow(name: coin.name, symbol: coin.symbol, price: coin.price, change: coin.change)
+                            .onTapGesture {
                                 selectedCoin = coin
                                 showDetail.toggle()
-                           }
+                            }
+                    }
                 }
-            }
-            .sheet(item: $selectedCoin) { coin in
-                CoinDetailsView(coinVM: CoinViewModel(coin: coin))
+                .sheet(item: $selectedCoin) { coin in
+                    CoinDetailsView(coinVM: CoinViewModel(coin: coin))
+                }
             }
         }
         .onAppear(){
@@ -32,7 +34,10 @@ struct FavouritesView: View {
                 coins = coins1
             }
         }
+        .navigationTitle("Favourites")
+        .navigationBarTitleDisplayMode(.inline)
     }
+    
 }
 
 struct FavouritesView_Previews: PreviewProvider {

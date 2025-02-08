@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TabsView: View {
     @State private var selectedTab = 0
-
+    
     var body: some View {
         TabView(selection: $selectedTab) {
             DashboardView()
@@ -18,14 +18,15 @@ struct TabsView: View {
                     Text("Home")
                 }
                 .tag(0)
-
-            FavouritesView()
-                .tabItem {
-                    Image(systemName: "star")
-                    Text("Favorites")
-                }
-                .tag(1)
-
+            NavigationStack {
+                FavouritesView()
+            }
+            .tabItem {
+                Image(systemName: "star")
+                Text("Favorites")
+            }
+            .tag(1)
+            
             Web3View()
                 .tabItem {
                     Image(systemName: "globe")
