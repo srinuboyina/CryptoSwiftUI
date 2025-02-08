@@ -76,5 +76,35 @@ class CoinViewModelTests: XCTestCase {
         viewModel.favorite = false // Remove from favorites
         XCTAssertFalse(viewModel.favorite)
     }
+    
+    func testChartData() {
+        // Given: A mock sparkline array
+        let sparklineData = ["1.23", "2.34", "3.45", "4.56"]
+        let mockCoin = CoinBuilder()
+                            .with(symbol: "BTC")
+                            .with(name: "Bitcoin")
+                            .with(change: "1.5")
+                            .with(marketCap: "1000000")
+                            .with(price: "50000")
+                            .with(volume24h: "100000")
+                            .with(iconUrl: "")
+                            .with(sparkline: sparklineData)
+                            .with(rank: 1)
+                            .with(btcPrice: "1.0")
+                            .build()
+        let viewModel = CoinViewModel(coin: mockCoin)
+        
+        // When: Calling chartData()
+        let result = viewModel.chartData()
+        
+        // Then: Validate the output
+        XCTAssertEqual(result.count, sparklineData.count, "chartData count mismatch")
+        
+        // Check if x-values start from 1 and increment
+        for (index, dataPoint) in result.enumerated() {
+            XCTAssertEqual(dataPoint.x, Double(index + 1), "X value mismatch at index \(index)")
+            XCTAssertEqual(dataPoint.y, Double(sparklineData[index]), "Y value mismatch at index \(index)")
+        }
+    }
 
 }
