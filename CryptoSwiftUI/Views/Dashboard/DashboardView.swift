@@ -12,6 +12,7 @@ struct DashboardView: View {
     @State private var selectedTab: Int = 0
     @State private var isLoading: Bool = true
     @State private var showSearches = false
+    @State private var showProfile = false
     @State private var showCoinDetails = false
     @State private var selectedCoin: Coin?
     
@@ -24,8 +25,11 @@ struct DashboardView: View {
                 // Profile Icon
                 Image(systemName: "person.circle")
                     .resizable()
-                    .frame(width: 40, height: 40)
+                    .frame(width: 20, height: 20)
                     .padding()
+                    .onTapGesture {
+                        showProfile = true
+                    }
                 
                 // Search Bar
                 HStack {
@@ -185,9 +189,11 @@ struct DashboardView: View {
             CoinDetailsView(coin: CoinViewModel(coin: coin))
         }
         .fullScreenCover(isPresented: $showSearches) {
-            SearchView()
+            SearchView(coins: coinsVM.allCoins)
         }
-
+        .fullScreenCover(isPresented: $showProfile) {
+            ProfileView()
+        }
         
     }
     

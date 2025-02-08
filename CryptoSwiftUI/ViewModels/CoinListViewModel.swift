@@ -7,16 +7,25 @@
 
 import Foundation
 
+protocol CoinListViewModelProtocol {
+    func loadCoins()
+    var allCoins: [Coin] {get}
+    func gainers() -> [Coin]
+    func loosers() -> [Coin]
+}
 
-class CoinListViewModel: ObservableObject {
+
+class CoinListViewModel: ObservableObject, CoinListViewModelProtocol {
     private var coins: [Coin] = []
     private let pageSize = 20
     private var currentPage = 0
 
     var onDataUpdate: (() -> Void)?
 
+    var networkManager: NetworkManagerProtocol = NetworkManager.shared
+    
     func loadCoins() {
-        NetworkManager.shared.fetchCoins { result in
+        networkManager.fetchCoins { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let coins):
@@ -47,6 +56,10 @@ class CoinListViewModel: ObservableObject {
             currentPage -= 1
             onDataUpdate?()
         }
+    }
+    
+    var allCoins: [Coin] {
+        return coins
     }
     
     func gainers() -> [Coin] {

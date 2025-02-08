@@ -1,0 +1,19 @@
+{
+  "commitish" : "5.1.0",
+  "iOS" : [
+    {
+      "swiftToolchainVersion" : "5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)",
+      "hash" : "c7d606f1e148be777a95263447819071b83814f3b76ea10c8da72929238de459",
+      "name" : "DGCharts",
+      "container" : "DGCharts.xcframework",
+      "identifier" : "ios-arm64"
+    },
+    {
+      "swiftToolchainVersion" : "5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)",
+      "hash" : "b3d9e9b52667fc93ff1917a73d17bef2d6eb2ee5dfdb8fe343c8361a51e6f910",
+      "name" : "DGCharts",
+      "container" : "DGCharts.xcframework",
+      "identifier" : "ios-arm64_x86_64-simulator"
+    }
+  ]
+}

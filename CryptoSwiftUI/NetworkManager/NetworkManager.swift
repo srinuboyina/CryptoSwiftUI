@@ -7,7 +7,11 @@
 
 import Foundation
 
-class NetworkManager {
+protocol NetworkManagerProtocol {
+    func fetchCoins(completion: @escaping (Result<[Coin], Error>) -> Void)
+}
+
+class NetworkManager: NetworkManagerProtocol {
     static let shared = NetworkManager()
 
     func fetchCoins(completion: @escaping (Result<[Coin], Error>) -> Void) {
@@ -39,3 +43,4 @@ class NetworkManager {
         task.resume()
     }
 }
+

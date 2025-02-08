@@ -32,18 +32,12 @@ struct TabsView: View {
                     Text("Web3")
                 }
                 .tag(2)
-            FeaturesView()
-                .tabItem {
-                    Image(systemName: "globe")
-                    Text("Features")
-                }
-                .tag(3)
             PortfolioView()
                 .tabItem {
                     Image(systemName: "person.crop.circle")
                     Text("Portfolio")
                 }
-                .tag(4)
+                .tag(3)
         }
     }
 }

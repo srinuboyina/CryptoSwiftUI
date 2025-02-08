@@ -14,8 +14,15 @@ struct Search: Identifiable  {
     let color: Color
 }
 
-
 struct SearchView: View {
+    @State var coins: [Coin] = []
+    @State private var searchText = ""
+    
+    var filteredCoins: [Coin] {
+        searchText.isEmpty ? coins : coins.filter { $0.name.localizedCaseInsensitiveContains(searchText)
+        }
+    }
+    
     let recentSearches = ["HBAR", "EMT", "ETH", "BNB", "AVAX", "ADA", "SHIB", "DOT"]
     let topSearchesInCoins = [
         Search(symbol:"DOGE", change:"-2.22%", color:.red),
@@ -40,8 +47,7 @@ struct SearchView: View {
                         dismiss()
                     }
                 
-                
-                TextField("Search from 500+ coins", text: .constant(""))
+                TextField("Search from 500+ coins", text: $searchText)
                     .padding(.vertical, 8)
                     .padding(.horizontal, 12)
                     .background(Color.gray.opacity(0.1))
@@ -49,69 +55,77 @@ struct SearchView: View {
             }
             .padding()
             
-            // Recent Searches
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Recent Searches")
-                    .font(.headline)
-                    .foregroundColor(.gray)
+            if !searchText.isEmpty {
+                List {
+                    ForEach(filteredCoins, id: \.symbol) { coin in
+                        CoinRow(name: coin.name, symbol: coin.symbol, price: coin.price, change: coin.change)
+                    }
+                }
+            } else {
+                // Recent Searches
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Recent Searches")
+                        .font(.headline)
+                        .foregroundColor(.gray)
+                        .padding(.horizontal)
+                    
+                    // Recent Searches Tags
+                    WrapHStack(items: recentSearches) { item in
+                        Text(item)
+                            .padding(.vertical, 6)
+                            .padding(.horizontal, 12)
+                            .background(Color.gray.opacity(0.2))
+                            .cornerRadius(15)
+                            .foregroundColor(.black)
+                    }
+                    .frame(height: 100)
                     .padding(.horizontal)
+                }
                 
-                // Recent Searches Tags
-                WrapHStack(items: recentSearches) { item in
-                    Text(item)
-                        .padding(.vertical, 6)
-                        .padding(.horizontal, 12)
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(15)
-                        .foregroundColor(.black)
+                // Top Searches in Coins
+                SectionHeader(title: "Top searches in Coins")
+                
+                HStack {
+                    ForEach(topSearchesInCoins, id: \.symbol) { coin in
+                        VStack {
+                            Text(coin.symbol)
+                                .font(.headline)
+                                .foregroundColor(.black)
+                            Text(coin.change)
+                                .font(.subheadline)
+                                .foregroundColor(coin.color)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(10)
+                    }
                 }
-                .frame(height: 100)
                 .padding(.horizontal)
-            }
-            
-            // Top Searches in Coins
-            SectionHeader(title: "Top searches in Coins")
-            
-            HStack {
-                ForEach(topSearchesInCoins, id: \.symbol) { coin in
-                    VStack {
-                        Text(coin.symbol)
-                            .font(.headline)
-                            .foregroundColor(.black)
-                        Text(coin.change)
-                            .font(.subheadline)
-                            .foregroundColor(coin.color)
+                
+                // Top Searches in Futures
+                SectionHeader(title: "Top searches in Futures")
+                
+                HStack {
+                    ForEach(topSearchesInFutures, id: \.symbol) { future in
+                        VStack {
+                            Text(future.symbol)
+                                .font(.headline)
+                                .foregroundColor(.black)
+                            Text(future.change)
+                                .font(.subheadline)
+                                .foregroundColor(future.color)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(10)
                     }
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.gray.opacity(0.1))
-                    .cornerRadius(10)
                 }
+                .padding(.horizontal)
+                
+                Spacer()
             }
-            .padding(.horizontal)
-            
-            // Top Searches in Futures
-            SectionHeader(title: "Top searches in Futures")
-            
-            HStack {
-                ForEach(topSearchesInFutures, id: \.symbol) { future in
-                    VStack {
-                        Text(future.symbol)
-                            .font(.headline)
-                            .foregroundColor(.black)
-                        Text(future.change)
-                            .font(.subheadline)
-                            .foregroundColor(future.color)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.gray.opacity(0.1))
-                    .cornerRadius(10)
-                }
-            }
-            .padding(.horizontal)
-            
-            Spacer()
         }
         .background(Color.white)
         .ignoresSafeArea(.keyboard, edges: .bottom)
