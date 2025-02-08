@@ -15,9 +15,9 @@ extension String {
             if number >= 1_000_000_000 {
                 result = String(format: "%.2fB", number / 1_000_000_000)
             } else if number >= 1_000_000 {
-                result = String(format: "%.2fM", number / 1_000_000)
+                result = String(format: "%.2fM", floor(number / 1_000_000 * 100)/100)
             } else if number >= 1_000 {
-                result = String(format: "%.2fK", number / 1_000)
+                result = String(format: "%.2fK", floor(number / 1_000 * 100) / 100)
             } else {
                 result = String(format: "%.2f", number)
             }

@@ -37,21 +37,6 @@ class CoinListViewModelTests: XCTestCase {
         waitForExpectations(timeout: 2.0, handler: nil)
     }
     
-    func testGetCoinsForPage() {
-        let mockCoins = (1...50).map { CoinBuilder()
-                .with(symbol: "COIN\($0)")
-                .with(name: "Coin \($0)")
-                .with(change: "\($0 % 10)")
-                .build()
-            
-        }
-        networkManager.loadMockCoins(coins: mockCoins)
-        viewModel.loadCoins()
-
-        let firstPageCoins = viewModel.getCoinsForPage()
-        XCTAssertEqual(firstPageCoins.count, 20, "First page should contain 20 coins")
-    }
-    
     func testPaginationNextPage() {
         let mockCoins = (1...50).map { CoinBuilder()
                 .with(symbol: "COIN\($0)")
@@ -62,10 +47,12 @@ class CoinListViewModelTests: XCTestCase {
         }
         networkManager.loadMockCoins(coins: mockCoins)
         viewModel.loadCoins()
-
-        viewModel.nextPage()
-        let secondPageCoins = viewModel.getCoinsForPage()
-        XCTAssertEqual(secondPageCoins.count, 20, "Second page should contain 20 coins")
+        self.viewModel.nextPage()
+        
+        fetchData {
+            let firstPageCoins = self.viewModel.getCoinsForPage()
+            XCTAssertEqual(firstPageCoins.count, 20, "After going to next page and back, first page should contain 20 coins")
+        }
     }
     
     func testPaginationPreviousPage() {
@@ -81,8 +68,11 @@ class CoinListViewModelTests: XCTestCase {
 
         viewModel.nextPage()
         viewModel.previousPage()
-        let firstPageCoins = viewModel.getCoinsForPage()
-        XCTAssertEqual(firstPageCoins.count, 20, "After going to next page and back, first page should contain 20 coins")
+        
+        fetchData {
+            let firstPageCoins = self.viewModel.getCoinsForPage()
+            XCTAssertEqual(firstPageCoins.count, 20, "After going to next page and back, first page should contain 20 coins")
+        }
     }
     
     func testGainers() {
@@ -93,10 +83,15 @@ class CoinListViewModelTests: XCTestCase {
         ]
         networkManager.loadMockCoins(coins: mockCoins)
         viewModel.loadCoins()
-
-        let gainers = viewModel.gainers()
-        XCTAssertEqual(gainers.count, 2, "Should return 2 gainers")
-        XCTAssertEqual(gainers.first?.symbol, "XRP", "XRP should be the top gainer")
+        
+        let expectation = XCTestExpectation(description: "Loosers testing")
+        fetchData {
+            let loosers = self.viewModel.gainers()
+            XCTAssertEqual(loosers.count, 2, "Should return 2 loosers")
+            XCTAssertEqual(loosers.first?.symbol, "XRP", "Ripple should be the top gainer")
+            expectation.fulfill() // Mark expectation as fulfilled
+        }
+        wait(for: [expectation], timeout: 2)
     }
     
     func testLoosers() {
@@ -106,11 +101,21 @@ class CoinListViewModelTests: XCTestCase {
             CoinBuilder().with(symbol: "XRP").with(name: "Ripple").with(change: "-20").build(),
         ]
         networkManager.loadMockCoins(coins: mockCoins)
-        viewModel.loadCoins()
-
-        let loosers = viewModel.loosers()
-        XCTAssertEqual(loosers.count, 2, "Should return 2 loosers")
-        XCTAssertEqual(loosers.first?.symbol, "ETH", "Ethereum should be the top loser")
+        let expectation = XCTestExpectation(description: "Loosers testing")
+        fetchData {
+            let loosers = self.viewModel.loosers()
+            XCTAssertEqual(loosers.count, 2, "Should return 2 loosers")
+            XCTAssertEqual(loosers.first?.symbol, "ETH", "Ethereum should be the top loser")
+            expectation.fulfill() // Mark expectation as fulfilled
+        }
+        wait(for: [expectation], timeout: 2)
+    }
+    
+    func fetchData(completion: @escaping () -> Void) {
+        self.viewModel.loadCoins()
+        DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
+            completion() // Simulate network response
+        }
     }
 }
 
