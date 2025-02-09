@@ -14,6 +14,8 @@ class InstantBuyViewController: UIViewController, UITableViewDelegate, UITableVi
     private var viewModel: CoinListViewModelProtocol!
     private var coins: [Coin] = []
     private var filteredCoins: [Coin] = []
+    private var isAscendingPrice = true
+    private var isAscendingChange = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,15 +46,59 @@ class InstantBuyViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = false
-
+        
         // Back Button
         let backButton = UIBarButtonItem(image: UIImage(systemName: "arrow.left"), style: .plain, target: self, action: #selector(backButtonTapped))
         backButton.tintColor = .black // Change color if needed
         navigationItem.leftBarButtonItem = backButton
+        
+        navigationItem.leftBarButtonItem = backButton
+        
+        //sort buttons
+        
+        let sortByPriceButton = UIBarButtonItem(
+            image: UIImage(systemName: "arrow.up.arrow.down.circle"),
+            style: .plain,
+            target: self,
+            action: #selector(sortByPriceTapped)
+        )
+
+        let sortByChangeButton = UIBarButtonItem(
+            image: UIImage(systemName: "chart.bar.xaxis"),
+            style: .plain,
+            target: self,
+            action: #selector(sortByChangeTapped)
+        )
+
+        navigationItem.rightBarButtonItems = [sortByPriceButton, sortByChangeButton]
     }
 
     @objc func backButtonTapped() {
         navigationController?.dismiss(animated: true)
+    }
+    
+    @objc func sortByPriceTapped() {
+        isAscendingPrice.toggle() // Toggle sorting order
+        filteredCoins.sort {
+            if isAscendingPrice {
+               return (Double($0.price) ?? 0) < (Double($1.price) ?? 0)
+            } else {
+               return (Double($0.price) ?? 0) > (Double($1.price) ?? 0)
+            }
+        }
+        tableView.reloadData()
+    }
+    
+    @objc func sortByChangeTapped() {
+        isAscendingChange.toggle() // Toggle sorting order
+        filteredCoins.sort {
+            if isAscendingChange {
+               return (Double($0.change) ?? 0) < (Double($1.change) ?? 0)
+            } else {
+               return (Double($0.change) ?? 0) > (Double($1.change) ?? 0)
+            }
+        }
+        tableView.reloadData()
     }
     
     func setViewModel(viewModel: CoinListViewModelProtocol = CoinListViewModel()){
