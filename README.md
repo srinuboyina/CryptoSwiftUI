@@ -34,5 +34,6 @@ Portfolio screen to display the user portfolio
 ![Simulator Screen Shot - iPhone 14 Pro - 2025-02-08 at 14 38 54](https://github.com/user-attachments/assets/3592989d-6401-4ebc-9415-9943278cbf2b)
 ![Simulator Screen Shot - iPhone 14 Pro - 2025-02-08 at 17 35 47](https://github.com/user-attachments/assets/65b4cd65-05e8-44f2-9ca8-4ca36ef62a8c)
 ![Simulator Screen Shot - iPhone 14 Pro - 2025-02-08 at 21 47 49](https://github.com/user-attachments/assets/6f43bbd6-071e-4edf-9de9-2fe1223919f7)
+![Simulator Screen Shot - iPhone 14 Pro - 2025-02-09 at 20 28 49](https://github.com/user-attachments/assets/79bf93d0-a257-4dfb-b79d-9b376c2c1fd7)
 
 
