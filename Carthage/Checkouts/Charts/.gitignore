@@ -71,5 +71,6 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 Carthage
-DGCharts.framework.zip
+Charts.framework.zip
+ChartsRealm.framework.zip
 .swiftpm/

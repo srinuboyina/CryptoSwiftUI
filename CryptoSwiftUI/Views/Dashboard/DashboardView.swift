@@ -215,7 +215,7 @@ struct DashboardView: View {
             ProfileView()
         }
         .fullScreenCover(isPresented: $showInstantBuy) {
-            InstantBuyView()
+            InstantBuyViewControllerWrapper()
         }
         .fullScreenCover(isPresented: $showEarn) {
             EarnView()

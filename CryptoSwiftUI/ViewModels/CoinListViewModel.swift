@@ -12,6 +12,10 @@ protocol CoinListViewModelProtocol {
     var allCoins: [Coin] {get}
     func gainers() -> [Coin]
     func loosers() -> [Coin]
+    var onDataUpdate: (() -> Void)? {get set}
+    func getCoinsForPage() -> [Coin]
+    func nextPage()
+    func previousPage()
 }
 
 

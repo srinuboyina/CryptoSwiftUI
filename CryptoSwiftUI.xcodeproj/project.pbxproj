@@ -51,6 +51,11 @@
 		18D3D3D82D574510006F255E /* CoinViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3D3D72D574510006F255E /* CoinViewModelTests.swift */; };
 		18D3D3DA2D574A2D006F255E /* DGCharts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D3D3D92D574A2D006F255E /* DGCharts.xcframework */; };
 		18D3D3DB2D574A2D006F255E /* DGCharts.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18D3D3D92D574A2D006F255E /* DGCharts.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		18D66DA62D58E7C80005A3EF /* InstantBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D66DA52D58E7C80005A3EF /* InstantBuyViewController.swift */; };
+		18D66DA82D58E8230005A3EF /* CoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D66DA72D58E8230005A3EF /* CoinTableViewCell.swift */; };
+		18D66DAB2D58EBCC0005A3EF /* SDWebImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D66DA92D58EBA40005A3EF /* SDWebImage.xcframework */; };
+		18D66DAC2D58EBCC0005A3EF /* SDWebImage.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18D66DA92D58EBA40005A3EF /* SDWebImage.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		18D66DAE2D58EC7D0005A3EF /* InstantBuyVCWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D66DAD2D58EC7D0005A3EF /* InstantBuyVCWrapper.swift */; };
 		18DFAC1A2D5645750079D4B7 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DFAC192D5645750079D4B7 /* FavoriteService.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +84,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				18D3D3DB2D574A2D006F255E /* DGCharts.xcframework in Embed Frameworks */,
+				18D66DAC2D58EBCC0005A3EF /* SDWebImage.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +139,10 @@
 		18D3D3D52D570D31006F255E /* CoinBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinBuilder.swift; sourceTree = "<group>"; };
 		18D3D3D72D574510006F255E /* CoinViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinViewModelTests.swift; sourceTree = "<group>"; };
 		18D3D3D92D574A2D006F255E /* DGCharts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = DGCharts.xcframework; path = Carthage/Build/DGCharts.xcframework; sourceTree = "<group>"; };
+		18D66DA52D58E7C80005A3EF /* InstantBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantBuyViewController.swift; sourceTree = "<group>"; };
+		18D66DA72D58E8230005A3EF /* CoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTableViewCell.swift; sourceTree = "<group>"; };
+		18D66DA92D58EBA40005A3EF /* SDWebImage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDWebImage.xcframework; path = Carthage/Build/SDWebImage.xcframework; sourceTree = "<group>"; };
+		18D66DAD2D58EC7D0005A3EF /* InstantBuyVCWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantBuyVCWrapper.swift; sourceTree = "<group>"; };
 		18DFAC192D5645750079D4B7 /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D3D3DA2D574A2D006F255E /* DGCharts.xcframework in Frameworks */,
+				18D66DAB2D58EBCC0005A3EF /* SDWebImage.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +226,7 @@
 		18BC053A2D5516670048C9E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18D66DA92D58EBA40005A3EF /* SDWebImage.xcframework */,
 				18D3D3D92D574A2D006F255E /* DGCharts.xcframework */,
 				18BC053B2D5516680048C9E2 /* Realm.xcframework */,
 			);
@@ -403,6 +415,9 @@
 			isa = PBXGroup;
 			children = (
 				18C756D22D57BD4200E8F6C3 /* InstantBuyView.swift */,
+				18D66DA52D58E7C80005A3EF /* InstantBuyViewController.swift */,
+				18D66DA72D58E8230005A3EF /* CoinTableViewCell.swift */,
+				18D66DAD2D58EC7D0005A3EF /* InstantBuyVCWrapper.swift */,
 			);
 			path = "Instant Buy";
 			sourceTree = "<group>";
@@ -605,6 +620,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D66DAE2D58EC7D0005A3EF /* InstantBuyVCWrapper.swift in Sources */,
 				18C5BAFA2D538B22007E1D65 /* ConversionUtils.swift in Sources */,
 				18BC05312D54FDCD0048C9E2 /* Web3View.swift in Sources */,
 				18C5BAED2D5389CE007E1D65 /* Coin.swift in Sources */,
@@ -621,7 +637,9 @@
 				18C756CC2D57968E00E8F6C3 /* BalloonMarker.swift in Sources */,
 				18AB694D2D53BBE100FBD67D /* CoinDetailsView.swift in Sources */,
 				18C5BAF32D538A33007E1D65 /* CoinViewModel.swift in Sources */,
+				18D66DA82D58E8230005A3EF /* CoinTableViewCell.swift in Sources */,
 				18B3F8472D565A7F00C5C955 /* MenuRow.swift in Sources */,
+				18D66DA62D58E7C80005A3EF /* InstantBuyViewController.swift in Sources */,
 				18DFAC1A2D5645750079D4B7 /* FavoriteService.swift in Sources */,
 				18BC05352D54FE430048C9E2 /* PortfolioView.swift in Sources */,
 				18C5BAF72D538A44007E1D65 /* NetworkManager.swift in Sources */,
